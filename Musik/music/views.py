@@ -1,5 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from django.views import View
+from django.template import loader
 
 # Create your views here.
 
@@ -8,7 +10,8 @@ def index(request):
 
     Showing welcome message
     """
-    return HttpResponse("Welcome")
+    template = "music/index.html"
+    return render(request, template)
 
 def top_songs(request):
     """Top songs.
