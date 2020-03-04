@@ -18,7 +18,5 @@ def top_songs(request):
 
     TODO: Show songs by its popularity
     """
-    return HttpResponse(
-        "<head><title>Canciones populares</title></head>"
-        "<body><h1>Estas son las canciones del momento:</h1></body>"
-    )
+    template = "music/top_songs.html"
+    return render(request, template)
