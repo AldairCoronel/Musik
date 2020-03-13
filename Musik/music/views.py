@@ -16,7 +16,30 @@ def index(request):
 def top_songs(request):
     """Top songs.
 
-    TODO: Show songs by its popularity
+    TODO: Showing songs by its popularity
     """
     template = "music/top_songs.html"
     return render(request, template)
+
+# Class based views.
+
+class Index(View):
+    """Music index.
+
+    Showing welcome message
+    """
+    template = "music/index.html"
+    def get(self, request):
+        "GET"
+        return render(request, self.template)
+
+
+class TopSongs(View):
+    """Top songs.
+
+    TODO: Showing songs by its popularity
+    """
+    template = "music/top_songs.html"
+    def get(self, request):
+        "GET"
+        return render(request, self.template)
