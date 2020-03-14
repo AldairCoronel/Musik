@@ -1,6 +1,14 @@
-#player {
+.player {
     background-color: : white;
     display: inline-block;
     border: white;
     color: white;
+    position: relative;
+}
+
+.audio-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
 }
