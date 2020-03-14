@@ -1,5 +1,6 @@
 #player {
-    background-color: : red;
+    background-color: : white;
     display: inline-block;
-    border: blue;
+    border: white;
+    color: white;
 }
