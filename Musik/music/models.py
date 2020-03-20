@@ -3,10 +3,11 @@ from django.db import models
 # Create your models here.
 class Artist(models.Model):
     """Artist Model."""
+
     name = models.CharField(max_length=200)
 
     def __str__(self):
-        """Get str representation.""""
+        """Get str representation."""
         return self.name
 
     def __repr__(self):
@@ -16,7 +17,8 @@ class Artist(models.Model):
 
 
 class Song(models.Model):
-    """Song model."""
+    """Song Model."""
+
     name = models.CharField(max_length=200)
     song_file = models.FileField(null=True, upload_to=song_directory_path)
 
@@ -30,13 +32,12 @@ class Song(models.Model):
         if len(artists) == 0:
             return f"{self.name}"
         artists_str = f"{artists[0].name}"
-        for artists in artists[1:]:
-            artists_str += f"{, artist.name}"
+        for artist in artists[1:]:
+            artists_str += f", {artist.name}"
         return f"{self.name} by {artists_str}"
 
-
     def __repr__(self):
-        """Get str representation"""
+        """Get str representation."""
         return self.__str__()
 
 
