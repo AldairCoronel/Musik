@@ -12,3 +12,29 @@ class Artist(models.Model):
     def __repr__(self):
         """Get str representation."""
         return self.__str__()
+
+
+
+class Song(models.Model):
+    """Song model."""
+    name = models.CharField(max_length=200)
+    song_file = models.FileField(null=True, upload_to=song_directory_path)
+
+    # Relations (in the database)
+    artists = models.ManyToManyField("music.Artist", related_name="songs")
+
+    def __str__(self):
+        """Get str representation."""
+        artists_str = ""
+        artists = list(self.artists.all())
+        if len(artists) == 0:
+            return f"{self.name}"
+        artists_str = f"{artists[0].name}"
+        for artists in artists[1:]:
+            artists_str += f"{, artist.name}"
+        return f"{self.name} by {artists_str}"
+
+
+    def __repr__(self):
+        """Get str representation"""
+        return self.__str__()
