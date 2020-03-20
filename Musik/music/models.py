@@ -38,3 +38,9 @@ class Song(models.Model):
     def __repr__(self):
         """Get str representation"""
         return self.__str__()
+
+
+
+def song_directory_path(instance, filename):
+    """Get song directory path to save."""
+    return f"music/songs/{instance.id}_{instance.name}_{filename}"
