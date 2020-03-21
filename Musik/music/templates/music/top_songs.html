@@ -2,17 +2,16 @@
 {% extends 'music/base.html' %}
 
 {% load static %}
-
 {% block title %} Popular songs {% endblock title %}
 
 {% block body %}
-    <h1> These are the top songs :)</h1>
-    <br>
-    <h2> (yes, there's only one ...for now) </h2>
+    <h1> Songs </h1>
+    <div class="songs-list">
     <ul>
         {% for song in songs %}
-            <li>{{song}}</li>
+            <li> {{song}} | <a href="media/{{song.song_file}}"> {{song.song_file}} </a> </li>
         {% endfor %}
     </ul>
-    
+    </div>
+
 {% endblock body %}

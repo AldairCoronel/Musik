@@ -45,4 +45,6 @@ class TopSongs(View):
         """GET method."""
         songs = Song.objects.all()
         context = {"songs": songs}
+        for song in songs:
+            print(song.song_file)
         return render(request, self.template, context)
