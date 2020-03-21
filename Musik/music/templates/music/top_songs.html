@@ -9,4 +9,10 @@
     <h1> These are the top songs :)</h1>
     <br>
     <h2> (yes, there's only one ...for now) </h2>
+    <ul>
+        {% for song in songs %}
+            <li>{{song}}</li>
+        {% endfor %}
+    </ul>
+    
 {% endblock body %}
