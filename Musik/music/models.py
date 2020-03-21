@@ -9,7 +9,7 @@ class Artist(models.Model):
     """Artist Model."""
 
     name = models.CharField(max_length=200)
-    image = models.ImageField(upload_to=image_directory_path)
+    image = models.ImageField(blank=True, null=True, upload_to=image_directory_path)
 
     def __str__(self):
         """Get str representation."""
