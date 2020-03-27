@@ -62,4 +62,4 @@ class CreateArtist(CreateView):
     model = Artist
     form_class = ArtistForm
     template_name = "music/create_artist.html"
-    success_url = reverse_lazy('index')
+    success_url = reverse_lazy('index') # redirect to home page
