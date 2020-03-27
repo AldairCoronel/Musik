@@ -1,0 +1,16 @@
+<!-- Create Artist -->
+{% extends 'music/base.html' %}
+
+{% load static %}
+{% block title %} Create Artist {% endblock title %}
+
+{% block body %}
+    <h1> Create a new Artist </h1>
+    <div class="form">
+    <form method="post" enctype?"multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit"> Create Artist</button>
+    </form>
+    </div>
+{% endblock body %}
