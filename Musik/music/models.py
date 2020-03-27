@@ -2,7 +2,7 @@ from django.db import models
 
 def image_directory_path(instance, filename):
     """Get image directory path to save."""
-    return f"music/artists/{instance.id}_{instance.name}_{filename}"
+    return f"music/artists/{instance.name}_{filename}"
 
 # Create your models here.
 class Artist(models.Model):
